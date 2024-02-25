@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>me.drewol.Unnamed-SDVX-Clone</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Unnamed SDVX Clone</name>
+  <summary> A game based on K-Shoot MANIA and Sound Voltex </summary>
+  <description>
+    <p>
+        A game based on <a href="http://www.kshootmania.com/">K-Shoot MANIA</a> and <a href="https://remywiki.com/What_is_SOUND_VOLTEX">Sound Voltex</a>
+    </p>
+  </description>
+  <launchable type="desktop-id">me.drewol.Unnamed-SDVX-Clone.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://img.youtube.com/vi/1GCraT0ktrc/hqdefault.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image>https://img.youtube.com/vi/kP1tD6bkPa4/hqdefault.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image>https://img.youtube.com/vi/_g9Xv5RDwa0/hqdefault.jpg</image>
+    </screenshot>
+  </screenshots>
+  <url type="bugtracker">https://github.com/Drewol/unnamed-sdvx-clone/issues</url>
+  <url type="homepage">https://github.com/Drewol/unnamed-sdvx-clone</url>
+  <developer_name>Dreweol</developer_name>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.5.0" date="2021-06-13">
+      <description>https://github.com/Drewol/unnamed-sdvx-clone/releases/tag/v0.5.0</description>
+    </release>
+  </releases>
+</component>

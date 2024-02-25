@@ -1,0 +1,41 @@
+id: me.drewol.Unnamed-SDVX-Clone
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: usc-game
+finish-args:
+  # X11 + XShm access
+  - --share=ipc
+  - --socket=fallback-x11
+  # Wayland access
+  - --socket=wayland
+  # GPU acceleration
+  - --device=dri
+  # Needs to talk to the network
+  - --share=network
+  # Sound output
+  - --socket=pulseaudio
+modules:
+  - name: unnamed-sdvx-clone-app
+    buildsystem: simple
+    sources:
+      - type: file
+        path: me.drewol.Unnamed-SDVX-Clone.desktop
+      - type: file
+        path: me.drewol.Unnamed-SDVX-Clone.metainfo.xml
+    build-commands:
+      - install -D me.drewol.Unnamed-SDVX-Clone.metainfo.xml /app/share/metainfo/me.drewol.Unnamed-SDVX-Clone.metainfo.xml 
+      - install -D me.drewol.Unnamed-SDVX-Clone.desktop /app/share/applications/me.drewol.Unnamed-SDVX-Clone.desktop 
+  - name: unnamed-sdvx-clone
+    buildsystem: cmake
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    build-options:
+       build-args:
+         - --share=network
+    sources:
+      - type: git
+        url: https://github.com/Drewol/unnamed-sdvx-clone.git
+        branch: develop
+    post-install:
+      - install -D appimage/usc-game.png /app/share/icons/hicolor/128x128/apps/me.drewol.Unnamed-SDVX-Clone.png 
