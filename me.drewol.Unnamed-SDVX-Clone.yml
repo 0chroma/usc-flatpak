@@ -27,10 +27,7 @@ modules:
       - install -D me.drewol.Unnamed-SDVX-Clone.metainfo.xml /app/share/metainfo/me.drewol.Unnamed-SDVX-Clone.metainfo.xml 
       - install -D me.drewol.Unnamed-SDVX-Clone.desktop /app/share/applications/me.drewol.Unnamed-SDVX-Clone.desktop 
   - name: unnamed-sdvx-clone
-    buildsystem: cmake
-    build-options:
-      build-args:
-        - --share=network
+    buildsystem: cmake-ninja
     sources:
       - type: git
         url: https://github.com/zlib-ng/zlib-ng
@@ -43,6 +40,11 @@ modules:
       - type: git
         url: https://github.com/Drewol/unnamed-sdvx-clone.git
         branch: develop
+        commit: 162e40db296e78943c27068e9f2fea328055384c
+      - type: archive
+        url: https://github.com/miloyip/rapidjson/archive/v1.1.0.tar.gz
+        sha256: bf7ced29704a1e696fbccf2a2b4ea068e7774fa37f6d7dd4039d0787f8bed98e
+        dest: third_party/discord-rpc/thirdparty/rapidjson/
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DFETCHCONTENT_SOURCE_DIR_ZLIB=flatpak-deps/zlib-ng/
