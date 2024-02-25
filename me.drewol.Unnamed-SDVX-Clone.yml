@@ -40,22 +40,12 @@ modules:
         url: https://github.com/curl/curl/releases/download/curl-7_75_0/curl-7.75.0.tar.xz
         sha256: fe0c49d8468249000bda75bcfdf9e30ff7e9a86d35f1a21f428d79c389d55675
         dest: flatpak-deps/curl/
-      - type: archive
-        url: https://github.com/google/googletest/archive/release-1.11.0.tar.gz
-        sha256: b4870bf121ff7795ba20d20bcdd8627b8e088f2d1dab299a031c1034eddc93d5
-        dest: flatpak-deps/googletest/
-      - type: archive
-        url: https://github.com/cesanta/mongoose/archive/6.18.tar.gz
-        sha256: f5c10346abc9c72f7cac7885d853ca064fb09aad57580433941a8fd7a3543769
-        dest: flatpak-deps/mongoose/
       - type: git
         url: https://github.com/Drewol/unnamed-sdvx-clone.git
         branch: develop
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DFETCHCONTENT_SOURCE_DIR_ZLIB=flatpak-deps/zlib-ng/
-      - -DFETCHCONTENT_SOURCE_DIR_GOOGLETEST=flatpak-deps/googletest/
       - -DFETCHCONTENT_SOURCE_DIR_CURL=flatpak-deps/curl/
-      - -DFETCHCONTENT_SOURCE_DIR_MONGOOSE=flatpak-deps/mongoose/
     post-install:
       - install -D appimage/usc-game.png /app/share/icons/hicolor/128x128/apps/me.drewol.Unnamed-SDVX-Clone.png 
